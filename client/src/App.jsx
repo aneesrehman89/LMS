@@ -1,14 +1,36 @@
+import React from "react";
+import "./App.css";
+import MainLayout from "./Layout/MainLayout";
+import Login from "./pages/Login";
+import HeroSection from "./pages/student/HeroSection"
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Courses from "./pages/student/Courses";
 
-import './App.css';
-import Navbar from './components/ui/Navbar';
-import Login from './pages/Login';
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <MainLayout />,
+    children: [
+      {
+        path: "/",
+        element: (
+          <>
+            <HeroSection />
+            <Courses/>
+          </>
+        ),
+      },
+      {
+        path: "login",
+        element: <Login />,
+      },
+    ],
+  },
+]);
 
 function App() {
   return (
-    <main>
-      <Navbar/>
-      <Login/>
-    </main>
+    <RouterProvider router={appRouter} />
   );
 }
 
