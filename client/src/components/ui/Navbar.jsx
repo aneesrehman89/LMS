@@ -22,6 +22,7 @@ import {
 } from "@/components/ui/sheet";
 import React from "react";
 import Darkmode from "@/pages/Darkmode";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const user = true;
@@ -32,7 +33,10 @@ const Navbar = () => {
         <div className="flex items-center gap-2">
           <School size={"30"}></School>
           <h1 className="hidden md:block font-extrabold text-2xl">
+            <Link to="/">
             E-Learning
+            </Link>
+       
           </h1>
         </div>
         {/* user icon and  */}
@@ -53,8 +57,8 @@ const Navbar = () => {
                   <DropdownMenuLabel>My Account</DropdownMenuLabel>
                   <DropdownMenuSeparator />
                   <DropdownMenuGroup>
-                    <DropdownMenuItem>My Learning</DropdownMenuItem>
-                    <DropdownMenuItem>Edit Profile</DropdownMenuItem>
+                    <DropdownMenuItem> <Link to="my-learning">My Learning</Link></DropdownMenuItem>
+                    <DropdownMenuItem> <Link to="profile">Edit Profile</Link> </DropdownMenuItem>
                     <DropdownMenuItem>Log out</DropdownMenuItem>
                   </DropdownMenuGroup>
                   <DropdownMenuSeparator />

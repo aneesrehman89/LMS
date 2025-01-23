@@ -15,7 +15,7 @@ const Courses = () => {
             <CourseSkeleton key={index} />
           ))
         ) : (
-            courses.map((courses ,index)=>  <Course />)
+            courses.map((course ,index)=>  <Course key={index}/>)
         )}
         </div>
        
